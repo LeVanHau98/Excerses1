@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+</head>
+<style>
+    
+    *{
+        margin: 0;
+        padding: 0;
+        --background: #272424;
+    }
+    body{
+        box-sizing: border-box;
+        color: white;
+    }
+    .header{
+        background: #272424;
+        height: 80px;   
+        
+    }
+    .header-name{
+        font-weight: bold;
+    }
+    .nav{
+        height: 80px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .nav  ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav ul li{
+        padding: 6px;
+        list-style: none;
+    }
+    .header-icon{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+    }
+    .header-icon .icon {
+        margin-right:15px;
+    }
+    .header-icon h3{
+        margin-right: 15px;
+    }
+    .body{
+        margin:5px auto;
+        width: 90%;
+        height: 100%;
+
+    }
+    .body-1{
+        display: flex;  
+        justify-content: space-between;
+        align-items: center;
+       
+       
+        height: 600px;
+        background: rgb(79, 56, 56);
+        
+    }
+    .body-left{
+        width: 72%;
+        height: 100%;
+       
+    }
+    .body-left-header{
+        background: var(--background);
+        height: 10%;
+        margin-bottom: 11px;
+        display: flex;
+        align-items: center;
+    }
+    .body-left-header h3{
+        margin-right: 10px;
+        border: 3px solid #aacfb861 ;
+        padding:8px;
+    }
+    .message{
+        position: absolute;
+        width: 100%;
+        height: 73px;
+        background:rgb(24 22 22 / 71%) ;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        box-sizing: border-box;
+        bottom: 0;
+        left: 0;
+        
+
+    }
+
+    
+    .body-left-img{
+        width: 100%;
+        height: 88%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .img-big{
+        width:49%;
+        height: 100%;
+        position: relative;
+    }
+    .img-small{
+        width:49%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .img-small-firs{
+        width: 100%;
+        height: 49%;
+        position: relative;
+    }
+    .img-small-sec{
+        width: 100%;
+        height: 49%;
+        position: relative;
+    }
+    .body-left-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+    .body-right{
+        width: 26%;
+        height: 100%;
+        text-align: center;
+        
+    }
+    .body-right-header{
+        padding:22px;
+        font-weight: bold;
+    }
+    .body-right-content{
+        width: 97%;
+        height: 98px;
+        border-bottom: 1px solid black;
+        display: flex;
+        
+        align-items: center;
+        font-size: 12px;
+        position: relative;
+    }
+    .body-right-content img{
+        height: 80%;
+        width: 37%;
+        object-fit: cover;
+        margin-right: 12px;
+
+    }
+    .STT{
+        position: absolute;
+        background: black;
+        left:-3px;
+        top:6px;
+        padding:2px;
+    }
+    .Quick-read{
+        width: 100%;
+        height: 250px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+       
+    }
+    .Quick-read__img{
+        height: 100%;
+        width: 32%;
+        position: relative;
+    }
+    .Quick-read__img img{
+        width: 100%;
+        height: 100%;
+
+    }
+    .message-2{
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        bottom: 0;
+        left: 0;
+        background: #0000007d;
+        padding:14px;
+        box-sizing: border-box;
+    }
+    .message-2 span{
+        margin-right: 10px;
+    }
+    .forward{
+        position: absolute;
+        color:white;
+        font-size: 20px;
+        right: 0;
+        background: #242228c2;
+        padding:2px;
+        cursor: pointer;
+    }
+    .back{
+        position: absolute;
+        color:white;
+        font-size: 20px;
+        left: 0;
+        background: #242228c2;
+        padding:2px;
+        cursor: pointer;
+
+    }
+    .Order-post{
+        width: 100%;
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .Order-post__infor{
+        background: rgb(165, 144, 90);
+        width: 49%;
+        height: 152px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+   
+    
+    .Order-post__infor img{
+        width: 35%;
+        height: 100%;
+        object-fit: cover;
+        padding-right: 12px;
+    }
+    .infor__infor span{
+        padding-right: 10px;
+    }
+    .infor__infor h3{
+        padding:6px 0;
+        font-weight: bold;
+    }
+    .Popular-tabs{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .tab-image{
+        width: 32%;
+        height: 140px;
+        position: relative;
+    }
+    .tab-image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .tab-name{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: white;
+        background: black;
+        padding:3px;
+    }
+    .body-mail{
+        color: black;
+        width: 35%;
+        height: 170px;
+        text-align: center;
+        margin:10px auto;
+      
+    }
+    .body-mail p{
+        padding:10px;
+    }
+    .input-icon{
+      
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;     
+        
+    }
+    .input-icon input{ 
+        height: 100%;  
+        border: none; 
+        outline: none;
+        padding:10px;
+        background: black;
+        color: white;
+       
+       
+
+    }
+    .icon-mail{
+        height: 100%;
+        padding:10px;
+        cursor: pointer;
+        font-size: 23px;
+        background-color: grey;
+        
+    }
+    .footer{
+        width: 100%;
+        height: 240px;
+        background: rgba(36, 32, 32, 0.95);
+        color: white;
+    }
+    .footer-box{
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: 20px;
+        display: flex;
+        
+        justify-content: space-between;
+
+    }
+    .box-NewSfash{
+        width: 30%;
+    }
+    .box-NewSfash p{
+        padding:12px 0;
+    }
+    .box{
+        width: 20%;
+    }
+    .box h3{
+        padding-bottom: 12px;
+    }
+    .box h4{
+        padding-bottom: 12px;
+    }
+    .icons-footer{
+        padding-right: 10px;
+        cursor: pointer;
+        
+    }
+   
+</style>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+            <div class="header-name">NewSFlash</div>
+            <ul>
+                <li>Home</li>
+                <li>Categories</li>
+                <li>Review</li>
+                <li>News</li>
+                <li>Membership</li>
+                <li>Contact</li>
+            </ul>
+            <div class="header-icon"> 
+                    <ion-icon class="icon" name="sunny-outline"></ion-icon>
+                    <ion-icon class="icon" name="search-outline"></ion-icon>
+                 
+                <h3>Sign in</h3>
+                <h3>Sign up</h3>
+
+            </div>
+        </div>
+         </div>
+         <div class="body">
+            <div class="body-1">
+            <div class="body-left">
+                <div class="body-left-header">
+                    <h3>Breaking News</h3>
+                    <p>Apples announces a new partnership</p>
+                </div>
+                <div class="body-left-img">
+                    <div class="img-big"><img src="https://plus.unsplash.com/premium_photo-1682965964482-cf165103d5dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBhcnR5fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60">
+                                         <div class="message"><h3>Is PO the future?</h3></div>
+                    </div>
+                    <div class="img-small">
+                        <div class="img-small-firs"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhcnR5fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60">
+                                                    <div class="message"><h3>Is PO the future?</h3></div>
+                        </div>
+                        <div class="img-small-sec"><img src="https://plus.unsplash.com/premium_photo-1684706282488-660cd30e8596?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80">
+                                                     <div class="message"><h3>Is PO the future?</h3></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="body-right">
+                <div class="body-right-header">Trending News</div>
+                <div class="body-right-content">
+                    <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhcnR5fGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60">
+                    <div><span style="padding-right: 5px;">23 Dec 2023</span><span>3 min read</span>
+                         <h3>Sample artcle title</h3>
+                    </div>
+                    <div class="STT">01</div>
+                </div>
+                <div class="body-right-content">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div><span style="padding-right: 5px;">23 Dec 2023</span><span>3 min read</span>
+                         <h3>Sample artcle title</h3>
+                    </div>
+                    <div class="STT">02</div>
+                </div>
+                <div class="body-right-content">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div><span style="padding-right: 5px;">23 Dec 2023</span><span>3 min read</span>
+                         <h3>Sample artcle title</h3>
+                    </div>
+                    <div class="STT">03</div>
+                </div>
+                <div class="body-right-content">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div><span style="padding-right: 5px;">23 Dec 2023</span><span>3 min read</span>
+                         <h3>Sample artcle title</h3>
+                    </div>
+                    <div class="STT">04</div>
+                </div>
+                <div class="body-right-content">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div><span style="padding-right: 5px;">23 Dec 2023</span><span>3 min read</span>
+                         <h3>Sample artcle title</h3>
+                    </div>
+                    <div class="STT">05</div>
+                </div>
+            </div>
+            </div>
+            <div class="Quick-read">
+                <div class="Quick-read__img">
+                <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60">
+                <div class="message-2"><span>23 dec 2023</span><span>4 min read</span>
+                     <h3>Sample article title </h3>
+                </div>
+                </div>
+                <div class="Quick-read__img">
+                <img src="https://plus.unsplash.com/premium_photo-1682144908294-73a3bda41961?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                <div class="message-2"><span>23 dec 2023</span><span>4 min read</span>
+                     <h3>Sample article title </h3>
+                </div>
+                </div>
+                <div class="Quick-read__img">
+                <img src="https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRldmljZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                <div class="message-2"><span>23 dec 2023</span><span>4 min read</span>
+                     <h3>Sample article title </h3>
+                </div>
+                </div>
+                <ion-icon class="forward" name="arrow-forward-outline"></ion-icon>
+                <ion-icon class="back" name="arrow-back-outline"></ion-icon>
+            </div>
+            <div style="color:white;padding:20px;background: var(--background);font-weight: 700;font-size: 20px;">ORDER POST</div>
+            <div class="Order-post">
+                <div class="Order-post__infor">
+                    <img src="https://images.unsplash.com/photo-1463725876303-ff840e2aa8d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlld3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div class="infor__infor"><span>23 Dec 2023</span><span>5 min read</span>
+                                               <h3>Sample article title</h3> 
+                                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, similique? Numquam totam architecto nem!</p>
+                    </div>
+                </div>
+                <div class="Order-post__infor">
+                    <img src="https://images.unsplash.com/photo-1463725876303-ff840e2aa8d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlld3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div class="infor__infor"><span>23 Dec 2023</span><span>5 min read</span>
+                                               <h3>Sample article title</h3> 
+                                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, similique? Numquam totam architecto nem!</p>
+                    </div>
+                </div>
+                <div class="Order-post__infor">
+                    <img src="https://images.unsplash.com/photo-1463725876303-ff840e2aa8d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlld3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div class="infor__infor"><span>23 Dec 2023</span><span>5 min read</span>
+                                               <h3>Sample article title</h3> 
+                                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, similique? Numquam totam architecto nem!</p>
+                    </div>
+                </div>
+                <div class="Order-post__infor">
+                    <img src="https://images.unsplash.com/photo-1463725876303-ff840e2aa8d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlld3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div class="infor__infor"><span>23 Dec 2023</span><span>5 min read</span>
+                                               <h3>Sample article title</h3> 
+                                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, similique? Numquam totam architecto nem!</p>
+                    </div>
+                </div>
+                <div class="Order-post__infor">
+                    <img src="https://images.unsplash.com/photo-1463725876303-ff840e2aa8d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlld3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div class="infor__infor"><span>23 Dec 2023</span><span>5 min read</span>
+                                               <h3>Sample article title</h3> 
+                                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, similique? Numquam totam architecto nem!</p>
+                    </div>
+                </div>
+                <div class="Order-post__infor">
+                    <img src="https://images.unsplash.com/photo-1463725876303-ff840e2aa8d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlld3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                    <div class="infor__infor"><span>23 Dec 2023</span><span>5 min read</span>
+                                               <h3>Sample article title</h3> 
+                                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, similique? Numquam totam architecto nem!</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="Popular-tabs">
+                <div class="tab-image"><img src="https://images.unsplash.com/photo-1528543606781-2f6e6857f318?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                                      <div class="tab-name">#Travel</div>
+                </div>
+                <div class="tab-image"><img src="https://plus.unsplash.com/premium_photo-1687893212297-d78b3f36f878?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                                      <div class="tab-name">#Food</div>
+                </div>
+                <div class="tab-image"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaG5vbG9neXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                                      <div class="tab-name">#Technology</div>
+                </div>
+                <div class="tab-image"><img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGVhbHRofGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60">
+                                      <div class="tab-name">#Health</div>
+                </div>
+                <div class="tab-image"><img src="https://images.unsplash.com/photo-1585016495481-91613a3ab1bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bmF0dXJhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                                      <div class="tab-name">#Natural</div>
+                </div>
+                <div class="tab-image"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGZpdG5lc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60">
+                                      <div class="tab-name">#Fitness</div>
+                </div>
+            </div>
+            <div class="body-mail">
+                <h2>Subscribe to NewSFlash</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laboriosam sapiente eligendi autem, consequuntur suscipit numquam accusamus odio illo!</p>
+                <div class="input-icon">
+                    <input type="text" placeholder="Enter your email address">
+                    <ion-icon class="icon-mail" name="mail-unread-outline"></ion-icon>
+                </div>
+            </div>
+         </div>
+         <div class="footer">
+            <div class="footer-box">
+                <div class="box-NewSfash">
+                    <h3>NewSFlash</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In praesentium laborum, culpa eius labore quae perspiciatis atque</p>
+                    <div class="box-NewSfash__icons">
+                        <ion-icon class="icons-footer" name="logo-instagram"></ion-icon>
+                        <ion-icon class="icons-footer" name="logo-facebook"></ion-icon>
+                        <ion-icon class="icons-footer" name="logo-twitter"></ion-icon>
+                        <ion-icon class="icons-footer" name="logo-tiktok"></ion-icon>
+                    </div>
+                </div>
+                <div class="box-Categories box">
+                    <h3>Categories</h3>
+                    <h4>Travel</h4>
+                    <h4>Food</h4>
+                    <h4>Technology</h4>
+                    <h4>Health</h4>
+                    <h4>Natural</h4>
+                    <h4>Fitness</h4>
+                </div>
+                <div class="box-Links box">
+                    <h3>Usesful Links</h3>
+                    <h4>Home</h4>
+                    <h4>Element</h4>
+                    <h4>Tags</h4>
+                    <h4>Authors</h4>
+                    <h4>Memberships</h4>
+                </div>
+                <div class="box-Company box">
+                    <h3>Company</h3>
+                    <h4>Contact us</h4>
+                    <h4>F.A.Q</h4>
+                    <h4>Careers</h4>
+                    <h4>Authors</h4>
+                    <h4>Membership</h4>
+                </div>
+            </div>
+         </div>
+    </div> 
+</body>
+</html>
